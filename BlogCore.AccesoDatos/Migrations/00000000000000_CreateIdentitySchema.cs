@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using System;
 
 namespace BlogCore.Data.Migrations
 {
@@ -8,6 +7,8 @@ namespace BlogCore.Data.Migrations
     {
         protected override void Up (MigrationBuilder migrationBuilder)
         {
+            //Desactivar NUMERIC_ROUNDABORT
+            migrationBuilder.Sql("SET NUMERIC_ROUNDABORT OFF;");
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
